@@ -1,4 +1,4 @@
-// import { Env } from "../..";
+import { Env } from "@/index";
 import { Controller } from "../../domain/ports";
 
-export type MakeController = () => Controller
+export type MakeController = (env: Env) => Controller
