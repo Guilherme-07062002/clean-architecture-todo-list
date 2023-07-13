@@ -13,10 +13,9 @@ export class RemoveTaskController implements Controller {
         private readonly useCase: UseCase
     ) { }
 
-    async handle(request: Request<unknown, Request.Query>): Promise<Response> {
+    async handle(request: Request<unknown, unknown, Request.Query>): Promise<Response> {
         const query = request.query
         const response = await this.useCase.execute(query as removeTaskDTO)
-        
         return ok(response)
     }
 }
