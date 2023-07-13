@@ -1,7 +1,7 @@
-import { RemoveTaskUseCase } from "@/application";
+import { RemoveTaskUseCase } from "../../application";
 import { Env } from "@/index";
-import { SqliteTaskRepository } from "@/infra/repositories/sqlite3/sqlite-task-repository";
-import { RemoveTaskController } from "@/interface/controllers";
+import { SqliteTaskRepository } from "../../infra/repositories/sqlite3/sqlite-task-repository";
+import { RemoveTaskController } from "../../interface/controllers";
 import { MakeController } from "../ports/make-controller";
 
 export const makeRemoveTaskController = (): MakeController => {
