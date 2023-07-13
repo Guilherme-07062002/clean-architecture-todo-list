@@ -1,5 +1,5 @@
 import { Sequelize } from 'sequelize';
-import { createTaskDTO } from '@/domain/dtos';
+import { createTaskDTO, removeTaskDTO } from '@/domain/dtos';
 import { Task } from './../../../domain/entities';
 import { TaskRepository } from './../../../domain/repositories/task-repository';
 import { DataTypes, Model } from 'sequelize';
@@ -43,5 +43,16 @@ export class SqliteTaskRepository implements TaskRepository {
         const task = await TaskModel.create(data)
         if (!task) return { status: false }
         return new Task(data.id, data.description)
+    }
+
+    async remove(data: removeTaskDTO): Promise<boolean> {
+        const result = await TaskModel.destroy({
+            where: {
+                id: data.id
+            }
+        })
+        if (result == 0) return false
+        return true
+
     }
 }
