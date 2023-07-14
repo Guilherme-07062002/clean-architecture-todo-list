@@ -1,7 +1,7 @@
 import { UpdateTaskController } from './../../interface/controllers';
 import { UpdateTaskUsecase } from './../../application';
 import { Env } from "@/index";
-import { SqliteTaskRepository } from "@/infra/repositories/sqlite3/sqlite-task-repository";
+import { SqliteTaskRepository } from "../../infra/repositories/sqlite3/sqlite-task-repository";
 import { MakeController } from "../ports/make-controller";
 
 export const makeUpdateTaskController = (): MakeController => {
