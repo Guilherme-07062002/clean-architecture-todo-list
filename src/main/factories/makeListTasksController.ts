@@ -1,7 +1,7 @@
-import { ListTasksUseCase } from "@/application";
-import { Env } from "@/index";
-import { SqliteTaskRepository } from "@/infra/repositories/sqlite3/sqlite-task-repository";
-import { ListTasksController } from "@/interface/controllers/list-tasks-controller";
+import { ListTasksUseCase } from "../../application";
+import { Env } from "../../index";
+import { SqliteTaskRepository } from "../../infra/repositories/sqlite3/sqlite-task-repository";
+import { ListTasksController } from "../../interface/controllers/list-tasks-controller";
 import { MakeController } from "../ports/make-controller";
 
 export const makeListTasksController = (): MakeController => {
