@@ -1,8 +1,8 @@
 import { UpdateTaskController } from './../../interface/controllers';
 import { UpdateTaskUsecase } from './../../application';
-import { Env } from "@/index";
+import { Env } from "../../index";
 import { MakeController } from "../ports/make-controller";
-import { MongoTaskRepository } from '@/infra/repositories/mongo/mongo-task-repository';
+import { MongoTaskRepository } from '../../infra/repositories/mongo/mongo-task-repository';
 
 export const makeUpdateTaskController = (): MakeController => {
     return (env: Env) => {

@@ -1,6 +1,6 @@
 import { createTaskDTO, removeTaskDTO, updateTaskDTO } from "@/domain/dtos";
-import { Task } from "@/domain/entities";
-import { TaskRepository } from "@/domain/repositories/task-repository";
+import { Task } from "../../../domain/entities";
+import { TaskRepository } from "../../../domain/repositories/task-repository";
 import mongoose, { Model } from "mongoose";
 
 interface TaskDocument extends mongoose.Document {

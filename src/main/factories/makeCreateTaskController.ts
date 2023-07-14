@@ -2,8 +2,8 @@
 import { CreateTaskController } from './../../interface/controllers/create-task-controller';
 import { CreateTaskUseCase } from './../../application/create-task-usecase';
 import { MakeController } from './../ports/make-controller';
-import { Env } from '@/index';
-import { MongoTaskRepository } from '@/infra/repositories/mongo/mongo-task-repository';
+import { Env } from '../../index';
+import { MongoTaskRepository } from '../../infra/repositories/mongo/mongo-task-repository';
 
 export const makeCreateTaskController = (): MakeController => {
     return (env: Env) => {

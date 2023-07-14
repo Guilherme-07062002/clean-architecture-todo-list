@@ -1,4 +1,4 @@
-import { MongoTaskRepository } from "@/infra/repositories/mongo/mongo-task-repository";
+import { MongoTaskRepository } from "../../infra/repositories/mongo/mongo-task-repository";
 import { ListTasksUseCase } from "../../application";
 import { Env } from "../../index";
 import { ListTasksController } from "../../interface/controllers/list-tasks-controller";
