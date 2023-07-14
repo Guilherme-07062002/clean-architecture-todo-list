@@ -2,9 +2,7 @@ import express, { Router } from "express"
 import setupRoutes from "./main/config/setup-routes"
 
 export interface Env {
-    SQLITE_DB_NAME: string
-    SQLITE_USER_NAME: string
-    SQLITE_PASSWORD: string
+    URL: string
 }
 
 const app = express()

@@ -1,12 +1,12 @@
+import { MongoTaskRepository } from "@/infra/repositories/mongo/mongo-task-repository";
 import { ListTasksUseCase } from "../../application";
 import { Env } from "../../index";
-import { SqliteTaskRepository } from "../../infra/repositories/sqlite3/sqlite-task-repository";
 import { ListTasksController } from "../../interface/controllers/list-tasks-controller";
 import { MakeController } from "../ports/make-controller";
 
 export const makeListTasksController = (): MakeController => {
     return (env: Env) => {
-        const repo = new SqliteTaskRepository(env.SQLITE_DB_NAME, env.SQLITE_USER_NAME, env.SQLITE_PASSWORD)
+        const repo = new MongoTaskRepository(env.URL)
         const usecase = new ListTasksUseCase(repo)
         return new ListTasksController(usecase)
     }
