@@ -5,4 +5,5 @@ export interface TaskRepository {
     create(data: createTaskDTO): Promise<Task | Object>
     remove(data: removeTaskDTO): Promise<boolean>
     update(data: updateTaskDTO): Promise<boolean>
+    list(): Promise<Task[]>
 }

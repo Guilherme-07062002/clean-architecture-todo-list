@@ -64,5 +64,11 @@ export class SqliteTaskRepository implements TaskRepository {
         if (result[0] == 0) return false
         return true
     }
-    
+
+    async list(): Promise<Task[]> {
+        const tasks = await TaskModel.findAll()
+        const response = tasks.map((task: any) => new Task(task.id, task.description))
+        return response
+    }
+
 }

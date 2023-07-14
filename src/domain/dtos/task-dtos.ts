@@ -12,7 +12,3 @@ export type updateTaskDTO = {
     id: number,
     new_description: string
 }
-
-export type listTasksResponseDTO = {
-    result: Task[]
-}
