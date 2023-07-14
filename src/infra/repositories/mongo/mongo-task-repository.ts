@@ -35,12 +35,17 @@ export class MongoTaskRepository implements TaskRepository {
   }
 
   async remove(data: removeTaskDTO): Promise<boolean> {
-    const result = this.taskModel.deleteOne({ id: data.id });
+    const result = await this.taskModel.deleteOne({ id: data.id });
     if (!result) return false;
     return true;
   }
 
   async update(data: updateTaskDTO): Promise<boolean> {
+    const result = await this.taskModel.updateOne(
+      { id: data.id },
+      { description: data.new_description }
+    );
+    if (!result) return false;
     return true;
   }
 
