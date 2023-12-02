@@ -1,0 +1,30 @@
+[
+  {
+    "method": "POST",
+    "endpoint": "/task",
+    "request": {
+      "description": "test"
+    },
+    "status": 201
+  },
+  {
+    "method": "PUT",
+    "endpoint": "/task/656b5ad0a958d71a837f1611",
+    "request": {
+      "description": "test2"
+    },
+    "status": 200
+  },
+  {
+    "method": "DELETE",
+    "endpoint": "/task/656b5ad346d3f14a3710f6f1",
+    "request": {},
+    "status": 200
+  },
+  {
+    "method": "GET",
+    "endpoint": "/task",
+    "request": {},
+    "status": 200
+  }
+]

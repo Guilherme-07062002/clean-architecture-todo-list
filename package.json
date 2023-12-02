@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "tsnd src/index.ts",
     "test:unit": "vitest tests/unit/**/*.test.ts",
-    "test:integration": "vitest tests/integration/**/*.test.ts",
+    "test:integration": "node src/clear-log.js && vitest --silent --run tests/integration/**/*.test.ts && node src/add-brackets.js",
     "coverage:unit": "vitest tests/unit/**/*.test.ts --coverage"
   },
   "keywords": [],

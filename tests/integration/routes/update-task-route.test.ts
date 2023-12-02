@@ -8,13 +8,14 @@ describe("testing update task route", () => {
   beforeEach(async () => {
     const createResponse = await request(app)
       .post("/task")
-      .send({ description: "test" });
+      .send({ description: "test" })
+      .set("log-ignore", "true");
 
     expect(createResponse.status).toBe(201);
     createdTaskId = createResponse.body.id;
   });
 
-  test("should update a task successfully", async () => {
+  test("Should update a task", async () => {
     if (!createdTaskId) return;
 
     const updateResponse = await request(app)
@@ -27,7 +28,9 @@ describe("testing update task route", () => {
   afterEach(async () => {
     if (!createdTaskId) return;
 
-    const deleteResponse = await request(app).delete(`/task/${createdTaskId}`);
+    const deleteResponse = await request(app)
+      .delete(`/task/${createdTaskId}`)
+      .set("log-ignore", "true");
     expect(deleteResponse.status).toBe(200);
   });
 });

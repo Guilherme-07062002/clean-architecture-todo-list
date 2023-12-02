@@ -8,13 +8,13 @@ describe("testing remove task route", () => {
   beforeEach(async () => {
     const createResponse = await request(app)
       .post("/task")
-      .send({ description: "test" });
-    expect(createResponse.status).toBe(201);
+      .send({ description: "test" })
+      .set("log-ignore", "true"); // Cabeçalho personalizado para evitar o log;
 
     createdTaskId = createResponse.body.id;
   });
 
-  test("should remove the created task", async () => {
+  test("Should remove a task", async () => {
     if (!createdTaskId) return;
 
     const deleteResponse = await request(app).delete(`/task/${createdTaskId}`);

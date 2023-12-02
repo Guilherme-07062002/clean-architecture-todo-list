@@ -3,9 +3,8 @@ import request from "supertest";
 import { app } from "../../../src";
 
 let createdTaskId: string;
-
 describe("testing create task route", () => {
-  test("should return 201 if task created", async () => {
+  test("Should create a task", async () => {
     const response = await request(app).post("/task").send({
       description: "test",
     });
@@ -16,6 +15,8 @@ describe("testing create task route", () => {
   afterEach(async () => {
     if (!createdTaskId) return;
 
-    await request(app).delete(`/task/${createdTaskId}`);
+    await request(app)
+      .delete(`/task/${createdTaskId}`)
+      .set("log-ignore", "true"); // Cabeçalho personalizado para evitar o log;
   });
 });
